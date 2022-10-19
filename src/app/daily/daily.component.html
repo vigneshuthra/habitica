@@ -38,29 +38,19 @@
         X
       </button>
     </div>
-    <div>
-
-      <div class="listDataContainer" *ngFor="let value of addValue; index as i">
-        <button
-        mat-mini-fab
-        color="white"
-        class="addDone"
-      >
-        &#x2713;
-      </button>
+    <div class="listDataContainer" *ngFor="let value of addValue; index as i">
+      <button mat-mini-fab color="white" class="addDone">&#x2713;</button>
       <div class="displayvalue" [ngClass]="{ 'line-through': value.completed }">
-
         {{ value.name }}
       </div>
       <button
-      mat-mini-fab
-      color="white"
-      class="removeDone"
-      (click)="removeData(i)"
-    >
-      X
-    </button>
-
-      </div>
+        mat-mini-fab
+        color="white"
+        class="removeDone"
+        (click)="removeData(i)"
+      >
+        X
+      </button>
     </div>
-  </div></mat-card>
+  </div>
+</mat-card>

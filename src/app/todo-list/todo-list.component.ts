@@ -20,10 +20,8 @@ export class TodoListComponent implements OnInit {
     window.localStorage.setItem('task', JSON.stringify(this.taskList));
     this.newTodoForm.reset();
   }
-  markDone(value: any) {
-    
-  }
-  
+  markDone(value: any) {}
+
   removeTask(i: any) {
     this.taskList.splice(i, 1);
     window.localStorage.setItem('task', JSON.stringify(this.taskList));

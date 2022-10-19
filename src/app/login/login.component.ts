@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
         ]),
         password: new FormControl('', [
           Validators.required,
-          Validators.pattern(
-            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,12}$'
-          ),
+          Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,12}$'),
         ]),
       });
     }

@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 interface _Daily {
   id: number;
   name: string;
-  
 }
 
 @Component({
   selector: 'app-filterbar',
   templateUrl: './filterbar.component.html',
-  styleUrls: ['./filterbar.component.scss']
+  styleUrls: ['./filterbar.component.scss'],
 })
 export class FilterbarComponent implements OnInit {
   searchTerm = '';
@@ -25,15 +24,13 @@ export class FilterbarComponent implements OnInit {
       .subscribe((data: _Daily[]) => {
         this.dailies = data;
         this.allDaily = this.dailies;
-        console.log(this.allDaily)
+        console.log(this.allDaily);
       });
   }
 
-  search(value: string) : void {
+  search(value: string): void {
     this.dailies = this.allDaily.filter((val) =>
       val.name.toLowerCase().includes(value)
     );
   }
-  }
-
-
+}

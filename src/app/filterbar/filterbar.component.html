@@ -1,5 +1,4 @@
-<input type="search" [(ngModel)]="searchTerm" (input)="search(searchTerm)" >
-<div *ngFor="let daily of dailies | searchFilter: searchTerm; index as i" >
-      {{daily.name}}
-
+<input type="search" [(ngModel)]="searchTerm" (input)="search(searchTerm)" />
+<div *ngFor="let daily of dailies | searchFilter: searchTerm; index as i">
+  {{ daily.name }}
 </div>

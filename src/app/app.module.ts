@@ -10,10 +10,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatCardModule} from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 import { DailyComponent } from './daily/daily.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -23,10 +23,9 @@ import { HabitsComponent } from './habits/habits.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FilterbarComponent } from './filterbar/filterbar.component';
 import { FilterPipe } from './filterbar/filter.pipe';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DailyRouteComponent } from './daily-route/daily-route.component';
 import { ProfileBannerComponent } from './profile-banner/profile-banner.component';
-
 
 @NgModule({
   declarations: [
@@ -39,8 +38,7 @@ import { ProfileBannerComponent } from './profile-banner/profile-banner.componen
     FilterbarComponent,
     FilterPipe,
     DailyRouteComponent,
-    ProfileBannerComponent
-    
+    ProfileBannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,12 +56,10 @@ import { ProfileBannerComponent } from './profile-banner/profile-banner.componen
     HttpClientModule,
     MatButtonToggleModule,
     MatCheckboxModule,
-    MatAutocompleteModule
-
-    
+    MatAutocompleteModule,
   ],
-  exports:[AppRoutingModule],
+  exports: [AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
