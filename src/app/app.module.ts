@@ -21,6 +21,11 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { HabitsComponent } from './habits/habits.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FilterbarComponent } from './filterbar/filterbar.component';
+import { FilterPipe } from './filterbar/filter.pipe';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { DailyRouteComponent } from './daily-route/daily-route.component';
+import { ProfileBannerComponent } from './profile-banner/profile-banner.component';
 
 
 @NgModule({
@@ -31,6 +36,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     DailyComponent,
     TodoListComponent,
     HabitsComponent,
+    FilterbarComponent,
+    FilterPipe,
+    DailyRouteComponent,
+    ProfileBannerComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +57,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSelectModule,
     HttpClientModule,
     MatButtonToggleModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatAutocompleteModule
 
     
   ],
