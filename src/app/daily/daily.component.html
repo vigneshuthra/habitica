@@ -1,0 +1,66 @@
+<mat-card>
+  <h1>Daily</h1>
+  <div>
+    <form [formGroup]="newTodoForm" class="flex mt-4">
+      <mat-form-field appearance="fill"
+        ><input
+          matInput
+          placeholder="Add daily"
+          formControlName="todoItem"
+          (keyup.enter)="addTask()"
+          autocomplete="off"
+      /></mat-form-field>
+    </form>
+  </div>
+  <a (click)="getdata()">view all</a>
+
+  <div>
+    <div class="listContainer" *ngFor="let value of taskList; index as i">
+      <button
+        mat-mini-fab
+        color="white"
+        class="addDone"
+        (click)="markDone(value)"
+      >
+        &#x2713;
+      </button>
+
+      <div class="displayvalue" [ngClass]="{ 'line-through': value.completed }">
+        {{ value.name }}
+      </div>
+
+      <button
+        mat-mini-fab
+        color="white"
+        class="removeDone"
+        (click)="removeTask(i)"
+      >
+        X
+      </button>
+    </div>
+    <div>
+
+      <div class="listDataContainer" *ngFor="let value of addValue; index as i">
+        <button
+        mat-mini-fab
+        color="white"
+        class="addDone"
+      >
+        &#x2713;
+      </button>
+      <div class="displayvalue" [ngClass]="{ 'line-through': value.completed }">
+
+        {{ value.name }}
+      </div>
+      <button
+      mat-mini-fab
+      color="white"
+      class="removeDone"
+      (click)="removeData(i)"
+    >
+      X
+    </button>
+
+      </div>
+    </div>
+  </div></mat-card>

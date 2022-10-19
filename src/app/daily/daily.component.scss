@@ -1,0 +1,44 @@
+.mat-card {
+  width: 120%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+.displayvalue {
+  justify-content: center;
+  font-size: 15px;
+  margin: 10px;
+}
+
+.listContainer {
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.addDone:hover {
+  background-color: green;
+}
+
+.removeDone:hover {
+  background-color: red;
+}
+
+a:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.listDataContainer {
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  justify-content: space-between;
+  width: 100%;
+}

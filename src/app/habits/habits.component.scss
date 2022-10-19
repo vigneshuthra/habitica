@@ -1,0 +1,31 @@
+.mat-card{
+    width: 120%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+}
+
+mat-form-field{
+    width: 100%;
+}
+.displayvalue{
+justify-content:center;
+font-size: large;
+margin: 10px;
+}
+
+.listContainer{
+display: flex;
+justify-content: space-between;
+font-size:15px;
+width: 100%;
+}
+
+.addDone:hover{
+    background-color: green;
+}
+
+.removeDone:hover{
+    background-color: red;
+}
+

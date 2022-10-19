@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container">
+      <a class="navbar-brand">Habitica</a>
+      <a class="nav-link" routerLink="tasks">Tasks</a>
+      <a class="nav-link" routerLink="daily">Dailies</a>
+      <a class="nav-link" routerLink="todo">To Do's</a>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</mat-toolbar>
+
+<mat-card class="profileSet">
+  <div>
+    <img mat-card-avatar src="assets/images/profile.jpg" />
+  </div>
+  <div class="profileName">
+   <b> <p>Vignesh Uthrapathy</p></b>
+    <p>@im_uviii - level 5 Newbie</p>
+  </div>
+</mat-card>
+<div class="main_content">
+  <div><app-daily></app-daily></div>
+  <div><app-todo-list></app-todo-list></div>
+  <div><app-habits></app-habits></div>
+</div>

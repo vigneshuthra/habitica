@@ -1,0 +1,22 @@
+<mat-card>
+  <h1>Habits</h1>
+  <div>
+    <form [formGroup]="newTodoForm" class="flex mt-4">
+      <mat-form-field appearance="fill"
+        ><input
+          matInput
+          placeholder="Add habit"
+          formControlName="todoItem"
+          autocomplete="off"
+          (keyup.enter)="addTask()"
+      /></mat-form-field>
+    </form>
+  </div>
+
+  <div>
+    <div class="listContainer" *ngFor="let data of habits.habitCollection">
+      <mat-checkbox>
+        {{ data.name }}
+      </mat-checkbox>
+    </div>
+  </div></mat-card>
