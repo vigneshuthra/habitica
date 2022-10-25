@@ -1,5 +1,4 @@
 <mat-card>
-  <h1>Habits</h1>
   <div>
     <form [formGroup]="newTodoForm" class="flex mt-4">
       <mat-form-field appearance="fill"
@@ -13,11 +12,27 @@
     </form>
   </div>
 
-  <div>
-    <div class="listContainer" *ngFor="let data of habits.habitCollection">
-      <mat-checkbox>
-        {{ data.name }}
-      </mat-checkbox>
+  <div cdkDropList class="habit-list" (cdkDropListDropped)="drop($event)">
+    <div
+      class="listContainer"
+      *ngFor="let data of habitList; index as i"
+      cdkDrag
+    >
+    <mat-checkbox (change)="OnChange($event)" [checked]="IsChecked"></mat-checkbox>
+
+      <div class="displayvalue" [ngClass]="{ 'line-through': data.completed }">
+        {{ data.name | uppercase }}
+      </div>
+      <div>
+        <button
+        mat-mini-fab
+        color="white"
+        class="removeDone"
+        (click)="removeTask(i)"
+      >
+        -
+      </button>
+      </div>
     </div>
   </div></mat-card
 >

@@ -26,6 +26,10 @@ import { FilterPipe } from './filterbar/filter.pipe';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DailyRouteComponent } from './daily-route/daily-route.component';
 import { ProfileBannerComponent } from './profile-banner/profile-banner.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -57,6 +61,9 @@ import { ProfileBannerComponent } from './profile-banner/profile-banner.componen
     MatButtonToggleModule,
     MatCheckboxModule,
     MatAutocompleteModule,
+    DragDropModule,
+    MatMenuModule,
+    MatIconModule
   ],
   exports: [AppRoutingModule],
   providers: [],

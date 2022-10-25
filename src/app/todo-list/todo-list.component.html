@@ -1,5 +1,4 @@
 <mat-card>
-  <h1>Todo List</h1>
   <div>
     <form [formGroup]="newTodoForm" class="flex mt-4">
       <mat-form-field appearance="fill"
@@ -12,29 +11,32 @@
       /></mat-form-field>
     </form>
   </div>
-  <div>
-    <div class="listContainer" *ngFor="let value of taskList; index as i">
-      <button
-        mat-mini-fab
-        color="white"
-        class="addDone"
-        (click)="markDone(value)"
-      >
-        &#x2713;
-      </button>
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+
+    <div class="listContainer" *ngFor="let value of taskList; index as i" cdkDrag>
+      
+      <mat-checkbox (change)="OnChange($event)" [checked]="IsChecked"></mat-checkbox>
+
 
       <div class="displayvalue" [ngClass]="{ 'line-through': value.completed }">
         {{ value.name }}
       </div>
 
-      <button
-        mat-mini-fab
-        color="white"
-        class="removeDone"
-        (click)="removeTask(i)"
-      >
-        X
-      </button>
+      <div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="removeTask(i)">
+              <mat-icon class="deleteitem" >delete</mat-icon>
+              <span>remove</span>
+            </button>
+           
+           
+          </mat-menu>
+        </div>
+      </div>
     </div>
     <div></div></div
 ></mat-card>

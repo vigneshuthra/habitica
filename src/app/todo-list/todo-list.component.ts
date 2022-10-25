@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 @Component({
@@ -10,7 +11,10 @@ export class TodoListComponent implements OnInit {
   newTodoForm = this.formBuilder.group({
     todoItem: '',
   });
-  constructor(private formBuilder: FormBuilder) {}
+  IsChecked: boolean;
+  constructor(private formBuilder: FormBuilder) {
+    this.IsChecked = false;
+  }
 
   ngOnInit(): void {}
 
@@ -25,5 +29,16 @@ export class TodoListComponent implements OnInit {
   removeTask(i: any) {
     this.taskList.splice(i, 1);
     window.localStorage.setItem('task', JSON.stringify(this.taskList));
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.taskList, event.previousIndex, event.currentIndex);
+  }
+  
+  OnChange($event: any) {
+    if ($event.checked) console.log('the task is added');
+    else console.log('the task is removed');
+
+    //MatCheckboxChange {checked,MatCheckbox}
   }
 }

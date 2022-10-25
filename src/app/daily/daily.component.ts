@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-daily',
@@ -16,9 +17,13 @@ export class DailyComponent implements OnInit {
     todoItem: '',
   });
   addValue: any;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  IsChecked: boolean;
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+    this.IsChecked = false;
+  }
 
   ngOnInit(): void {}
+
   addTask() {
     const value = this.newTodoForm.value.todoItem;
     this.taskList.push({ id: this.taskList.length, name: value });
@@ -45,5 +50,22 @@ export class DailyComponent implements OnInit {
 
   removeData(i: any) {
     this.addValue.splice(i, 1);
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.taskList, event.previousIndex, event.currentIndex);
+  }
+
+  OnChange($event: any) {
+    if ($event.checked) console.log('the task is added');
+    else console.log('the task is removed');
+
+    //MatCheckboxChange {checked,MatCheckbox}
+  }
+
+  getData() {
+    window.localStorage.getItem(this.taskList.toString());
+
+    console.log(this.taskList);
   }
 }
